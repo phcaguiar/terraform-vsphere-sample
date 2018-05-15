@@ -17,8 +17,18 @@ provider "vsphere" {
 
 
 module "datacenter" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/datacenter.git"
+   project = "${var.project-name}"
+}
+
+module "datacenter" {
    source = "./modules/datacenter"
    project-name = "${var.project-name}"
+}
+
+module "datastore" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/datastore.git"
+   project = "${var.project-name}"
 }
 
 module "datastore" {
@@ -27,9 +37,20 @@ module "datastore" {
 }
 
 module "resource_pool" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/resource_pool.git"
+   project = "${var.project-name}"
+}
+
+module "resource_pool" {
    source = "./modules/resource_pool"
    project-name = "${var.project-name}"
 }
+
+module "network" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/network.git"
+   project = "${var.project-name}"
+}
+
 
 module "network" {
    source = "./modules/network"
@@ -37,8 +58,18 @@ module "network" {
 }
 
 module "template" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/template.git"
+   project = "${var.project-name}"
+}
+
+module "template" {
    source = "./modules/template"
    project-name = "${var.project-name}"
+}
+
+module "vms" {
+   source = "git::ssh://git@bitbucket.org/stone-payments/vms.git"
+   project = "${var.project-name}"
 }
 
 module "vms" {
