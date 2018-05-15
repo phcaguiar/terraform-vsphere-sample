@@ -42,7 +42,7 @@ plan: check-terraform
 	@terraform plan -var-file=$(FILE)
 
 apply: check-terraform getawscred
-	@terraform apply -var-file=$(FILE)
+	@terraform apply -var-file=$(FILE) -auto-approve
 
 destroy: check-terraform
-	@terraform destroy -var-file=$(FILE)
+	@terraform destroy -var-file=$(FILE) -auto-approve
