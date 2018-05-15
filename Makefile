@@ -1,4 +1,4 @@
-FILE = ../project.tfvars
+FILE = ./project.tfvars
 PROJECT-NAME = $(shell grep -w project-name $(FILE) | awk '{print $$3}')
 #PROFILE-NAME = $(shell grep -w project-name $(FILE) | awk '{print $$3}')-admin
 TF-FILE = $(shell pwd | xargs basename | awk -F- '{print $$1}')
